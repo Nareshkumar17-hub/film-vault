@@ -23,7 +23,7 @@ const navigate =  useNavigate();
         return
      }
 
-       fetch(`https://www.omdbapi.com/?s=${search}&apikey=9b114858`)
+       fetch(`http://www.omdbapi.com/?s=${search}&apikey=9b114858`)
        .then(Response => Response.json())
        .then(data => setmovies(data.Search || []))
 
