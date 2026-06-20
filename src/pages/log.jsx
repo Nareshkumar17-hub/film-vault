@@ -16,7 +16,7 @@ function Log( {review , setreview , setmovielog , movielog}) {
 
  useEffect(() => {
      
-          fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=9b114858`) 
+          fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=9b114858`) 
           .then(Response  => Response.json())
           .then(data => setloggedposter(data))
   
