@@ -68,7 +68,7 @@ function App() {
      const savedwatchlist= localStorage.getItem("watchlist") ;
 
      if(savedwatchlist) {
-        setmovielog(JSON.parse(savedwatchlist))
+        setwatchlist(JSON.parse(savedwatchlist))
      }
 
 
