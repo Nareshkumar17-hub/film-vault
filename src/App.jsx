@@ -63,6 +63,26 @@ function App() {
 
 
 
+ useEffect( () => {
+
+     const savedwatchlist= localStorage.getItem("watchlist") ;
+
+     if(savedwatchlist) {
+        setmovielog(JSON.parse(savedwatchlist))
+     }
+
+
+
+
+   }, [])
+
+   useEffect( () => {
+
+     localStorage.setItem("watchlist" , JSON.stringify(watchlist))
+
+
+   }, [watchlist])   
+
 
 
 

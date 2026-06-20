@@ -12,7 +12,7 @@
 
       <> 
       
-      <h1 className="text-5xl p-8 font-bold text-center">{heading}</h1> 
+      <h1 className="md:text-5xl text-2xl p-8 font-bold text-center">{heading}</h1> 
 
       <h1 className="text-white text-5xl text-center bg-red-600">{watchlist.length === 0 ? "No movies listed" :""}</h1>
       <div className="h-[100%] w-full grid md:grid-cols-5 gap-5 grid-cols-2 justify-items-center">
