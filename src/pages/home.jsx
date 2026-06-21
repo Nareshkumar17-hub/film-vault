@@ -7,7 +7,7 @@ import Log from "./log";
 import Loglist from "./loglist";
     
  
- function Home ({fav , watchlist , movielog}) {
+ function Home ({fav , watchlists , setwatchlists , movielog}) {
     
 
 const navigate =  useNavigate();
@@ -46,7 +46,7 @@ const navigate =  useNavigate();
       <Nav setsearch={setsearch} search={search} /> 
        { fav.length > 0? <Fav fav={fav}/> : ""} 
     
-    { watchlist.length >  0? <WATCHLIST watchlist={watchlist}/> : ""}  
+    { watchlists.length >  0? <WATCHLIST watchlists={watchlists} setwatchlists={setwatchlists}/> : ""}  
      <Loglist movielog={movielog}/>
       <div className='bg-black  z-50 absolute top-20'> 
             

@@ -11,7 +11,7 @@ import Log from './pages/log';
 
 function App() {   
 
-  const [watchlist , setwatchlist] = useState([]) 
+  const [watchlists , setwatchlists] = useState([]) 
    const [fav , setfav] = useState([])   
    const [review , setreview] = useState("") 
    const [movielog , setmovielog] = useState([]) 
@@ -68,7 +68,7 @@ function App() {
      const savedwatchlist= localStorage.getItem("watchlist") ;
 
      if(savedwatchlist) {
-        setwatchlist(JSON.parse(savedwatchlist))
+        setwatchlists(JSON.parse(savedwatchlist))
      }
 
 
@@ -78,10 +78,10 @@ function App() {
 
    useEffect( () => {
 
-     localStorage.setItem("watchlist" , JSON.stringify(watchlist))
+     localStorage.setItem("watchlist" , JSON.stringify(watchlists))
 
 
-   }, [watchlist])   
+   }, [watchlists])   
 
 
 
@@ -96,8 +96,8 @@ function App() {
     <>
        
       <Routes> 
-        <Route path="/" element={<Home fav={fav} watchlist={watchlist} movielog={movielog}/>} /> 
-        <Route path="/movie/:imdbID" element={<Details setwatchlist={setwatchlist} watchlist={watchlist} setfav={setfav} fav={fav} />} />  
+        <Route path="/" element={<Home fav={fav} watchlists={watchlists} movielog={movielog} setwatchlists={setwatchlists}/>} /> 
+        <Route path="/movie/:imdbID" element={<Details setwatchlists={setwatchlists} watchlists={watchlists} setfav={setfav} fav={fav} />} />  
         <Route path="/log/:imdbID" element={<Log review={review} setreview={setreview} movielog={movielog} setmovielog={setmovielog}/>}/>
 
       </Routes>

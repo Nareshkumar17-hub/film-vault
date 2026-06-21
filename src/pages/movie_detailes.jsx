@@ -6,13 +6,13 @@ import HomeButton from "./homebutton";
 
 
 
-function Details( {watchlist ,setwatchlist , fav , setfav}) {
+function Details( {watchlists ,setwatchlists , fav , setfav}) {
     const {imdbID} =  useParams(); 
 
     const [padangal , setpadangal] = useState({}) 
 
     const alreadyexist = fav.some(fav => fav.imdbID === padangal.imdbID) 
-    const alreadylisted = watchlist.some(watchlist => watchlist.imdbID === padangal.imdbID)
+    const alreadylisted = watchlists.some(watchlist => watchlist.imdbID === padangal.imdbID)
 
     useEffect(() => {
 
@@ -45,7 +45,7 @@ function Details( {watchlist ,setwatchlist , fav , setfav}) {
                 <h3 className="md:text-3xl bg-orange-600 text-black">{padangal.Awards}</h3>
                 <h3 className="md:text-2xl">CAST: {padangal.Actors}</h3> 
                 <div className=" flex gap-2 md:gap-4 ">
-                    <button className='bg-blue-400 text-white text-bold md:p-2 rounded-xl' onClick={() => { alreadylisted ? alert("allready listed") : setwatchlist([...watchlist, padangal      ]) }} >ADD TO WATCHLIST</button>
+                    <button className='bg-blue-400 text-white text-bold md:p-2 rounded-xl' onClick={() => { alreadylisted ? alert("allready listed") : setwatchlists([...watchlists, padangal      ]) }} >ADD TO WATCHLIST</button>
                      <button className='bg-red-700 text-white text-bold md:p-2 rounded-xl' onClick={() => {alreadyexist ? alert("already added") : setfav([...fav, padangal ]) , alreadyexist == false ? alert(" movie added") : ""}} >ADD TO FAVORITE</button> 
                      <button className="bg-white text-black rounded-xl md:p-2" onClick={ () => {navigate( `/log/${padangal.imdbID}`)}}>Log movie review</button>
                 </div> 
